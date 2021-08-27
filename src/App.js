@@ -7,7 +7,7 @@ import Gallery from './components/Gallery';
 import ContactForm from './components/Contact';
 
 function App() {
-  const [categories] =useState([
+  const [categories] = useState([
     {
       name:'commercial',
       description: 'photos of products and other projects',
@@ -18,18 +18,19 @@ function App() {
   ])
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
-  
+  console.log(currentCategory)
   return (
       <div>
-          <Nav>
+          <Nav
             categories={categories}
             setCurrentCategory={setCurrentCategory}
-            currentCategory={currentCategory}
+            currentCategory={currentCategory}>
           </Nav>
           <main>
-              <ContactForm></ContactForm>
-              <Gallery currentCategory={currentCategory}></Gallery>
               <About></About>
+              <Gallery currentCategory={currentCategory}></Gallery>
+              
+              <ContactForm></ContactForm>
           </main>
       </div>
   );
